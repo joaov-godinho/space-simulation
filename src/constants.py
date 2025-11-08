@@ -1,0 +1,4 @@
+#Constantes Físicas
+
+GM_EARTH = 398600.4418
+RADIUS_EARTH = 6378.137
