@@ -1,1 +1,5 @@
 notebooks/gp.php
+.venv
+src/__pycache__
+tests/__pycache__
+.idea
