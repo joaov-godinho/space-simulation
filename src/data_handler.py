@@ -3,6 +3,17 @@ from skyfield.api import EarthSatellite, load
 import numpy as np
 import pandas as pd
 
+def satellites_to_dataframe(satellites):
+    data = []
+    for sat in satellites:
+        data.append({
+            'name': sat.name,
+            'catalog_number': sat.model.satnum,
+            'epoch': sat.epoch.utc_datetime(),
+            'object': sat
+        })
+    return pd.DataFrame(data)
+
 def load_tles_from_url(url='https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=tle'):
     try:
         ts = load.timescale()

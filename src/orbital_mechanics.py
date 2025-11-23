@@ -1,16 +1,27 @@
 import numpy as np
-from .constants import GM_EARTH
+from .constants import GM_EARTH, RADIUS_EARTH, J2
 
 # 1. FUNÇÃO DE CÁLCULO DA ACELERAÇÃO
 
 def calculate_acceleration(r_vector):
-    r_magnitude = np.linalg.norm(r_vector)
+    r_norm = np.linalg.norm(r_vector)
+    x, y, z = r_vector
 
-    a_magnitude = -GM_EARTH /(r_magnitude**2)
+    a_kepler = -GM_EARTH / (r_norm ** 3) * r_vector
 
-    a_vector = a_magnitude * (r_vector / r_magnitude)
+    # J2_factor = (3/2) * J2 * (GM * R_Terra^2) / r^5
+    k_j2 = 1.5 * J2 * GM_EARTH * (RADIUS_EARTH ** 2) / (r_norm ** 5)
 
-    return a_vector
+    z2 = z ** 2
+    r2 = r_norm ** 2
+
+    ax_j2 = k_j2 * x * (5 * z2 / r2 - 1)
+    ay_j2 = k_j2 * y * (5 * z2 / r2 - 1)
+    az_j2 = k_j2 * z * (5 * z2 / r2 - 3)
+
+    a_j2 = np.array([ax_j2, ay_j2, az_j2])
+
+    return a_kepler + a_j2
 
 # 2. FUNÇÃO DE RETORNO DAS VARIÁVEIS
 def get_derivatives(t, state):
