@@ -3,3 +3,4 @@ notebooks/gp.php
 src/__pycache__
 tests/__pycache__
 .idea
+data/active_satellites.txt
