@@ -1,0 +1,28 @@
+# Space Traffic Simulation - Dependencies
+# Python 3.8+
+
+# Core numerical computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Data processing and analysis
+pandas>=2.0.0
+
+# Astronomical calculations and TLE handling
+skyfield>=1.45
+astropy>=5.2
+
+# Visualization
+matplotlib>=3.7.0
+plotly>=5.14.0
+
+# HTTP requests for TLE downloads
+requests>=2.28.0
+
+# Testing (optional, for development)
+pytest>=7.3.0
+pytest-cov>=4.0.0
+
+# Jupyter notebooks (optional, for interactive exploration)
+jupyter>=1.0.0
+ipykernel>=6.22.0
