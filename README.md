@@ -28,7 +28,7 @@ Este projeto consiste em um **propagador orbital numérico de alta fidelidade** 
 <div align="center">
 
 ### Simulação de Órbita LEO
-![Orbital Simulation](https://via.placeholder.com/600x400?text=Adicione+um+GIF+da+simulação+aqui)
+![Orbital Simulation](spacesimulation.gif)
 *Exemplo de trajetória orbital simulada com correção J2*
 
 ### Validação Estatística
