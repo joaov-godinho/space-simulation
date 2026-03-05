@@ -125,9 +125,6 @@ pip install -r requirements.txt
 ```bash
 # Simular órbita da Estação Espacial Internacional (ISS)
 python demo_apresentacao.py
-
-# Simular constelação Starlink (batch processing)
-python main.py --constellation starlink --duration 24h
 ```
 
 ### 4. Notebooks Interativos
@@ -135,7 +132,7 @@ python main.py --constellation starlink --duration 24h
 Explore os exemplos no diretório `notebooks/`:
 
 ```bash
-jupyter notebook notebooks/orbital_simulation_demo.ipynb
+jupyter notebook notebooks/02_rk4j2_validation.ipynb
 ```
 
 ---
